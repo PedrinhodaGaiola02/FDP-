@@ -19,9 +19,7 @@ n = 4
 A = np.random.rand(m,r)
 B = np.random.rand(r,n)
 I = np.identity(m)
-C = multiplica_lenta(A, I, m, n, r)
-
-print('Matriz A=', A)
+C = multiplica_lenta(A, B, m, n, r)
 
 print('Matriz C=', C)
 
