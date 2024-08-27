@@ -1,8 +1,8 @@
 ##Exercício 2
 import numpy as np
 import time 
+import matplotlib.pyplot as plt
 
-tinicial = time.time()
 
 def multiplica_lenta (A, B, m, n, r):
     C1 = np.zeros(shape =(m,n), dtype=np.float64)
@@ -14,27 +14,28 @@ def multiplica_lenta (A, B, m, n, r):
 
     return C1
 
-m = 10
-r = 14
-n = 20
+m = 2000
+r = 2000
+n = 2000
 
 A = np.random.rand(m,r)
 B = np.random.rand(r,n)
-I = np.identity(m)
-C1 = multiplica_lenta(A, B, m, n, r)
 
+tinicial = time.time()
+# C1 = multiplica_lenta(A, B, m, n, r)
+tempo_corrido1 = time.time() - tinicial
 
-print('Matriz C1=', C1)
-
-print('Tempo corrido para calcular =', time.time() - tinicial)
+print('Tempo corrido para calcular1 =', tempo_corrido1, '\n')
 
 def multiplica_rapida (A, B, m, n, r):
     C2 = A@B
     return C2
+
+tinicial = time.time()
 C2 = multiplica_rapida(A, B, m, n, r)
-print('Matriz C2 = ', C2)
+tempo_corrido2 = time.time() - tinicial
 
-
+print('Tempo corrido para calcular2 =', tempo_corrido2, '\n')
 
 
 
