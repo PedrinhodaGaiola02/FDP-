@@ -1,20 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from gerador import sequencia
 
-def gera_sequencia(n, a):
-    sequencia = np.zeros(n)
-    sequencia[0] = 0.1
+N = 1000
+A = 300
 
-    for i in range(n - 1):
-        sequencia[i+1] = a*sequencia[i] * (1-sequencia[i])
+coeficientes = np.linspace(0, 4, A)
+sequencias = np.zeros((A, N))
 
-    return sequencia
+for i, a in enumerate(coeficientes):
+    sequencias[i] = sequencia(N, a)
 
-N = 5000
-a = 1
+for n in range(N):
+    sequenciaEstudada = np.zeros(A)
 
-sequencia = gera_sequencia(N, a)
-x = np.arange(N)
+    for (i, seq) in enumerate(sequencias):
+        sequenciaEstudada[i] = seq[n]
 
-plt.scatter(x, sequencia)
+    plt.scatter(coeficientes, sequenciaEstudada, s=0.1, c="black")
+
 plt.show()

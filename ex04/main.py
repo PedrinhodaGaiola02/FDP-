@@ -10,7 +10,7 @@ def gera_sequencia(n, a):
 
     return sequencia
 
-N = 50
+N = 100
 x = np.arange(N)
 
 seq1 = gera_sequencia(N, 1)
