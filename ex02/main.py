@@ -3,9 +3,9 @@ import numpy as np
 import time 
 import matplotlib.pyplot as plt
 
-dimenm = [100, 150, 200, 250, 300]
-dimenr = [100, 150, 200, 250, 300]
-dimenn = [100, 150, 200, 250, 300]
+dimenm = [10, 15, 20, 25, 30]
+dimenr = [10, 15, 20, 25, 30]
+dimenn = [10, 15, 20, 25, 30]
 tempos1 = []
 tempos2 = []
 for i in range (len(dimenm)):
