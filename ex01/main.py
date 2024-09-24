@@ -1,37 +1,56 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import utils
 import time
 
-## Medir tempo inicial
-tempo_inicial = time.time()
+dimensoes = range(0, 10000000, 1000000)
+tempos = np.zeros(len(dimensoes))
 
-N = 3
+for (i, dim) in enumerate(dimensoes):
 
-# O computador precisa saber quais serao os vetores
-vetorA = np.random.randint(0, 10, size=N)
-vetorB = np.random.randint(0, 10, size=N)
-vetorC = np.zeros(N)
+    vetorA = np.random.randint(0, 10, size=dim)
+    vetorB = np.random.randint(0, 10, size=dim)
+    vetorC = np.zeros(dim)
 
-print("Vetores gerados:")
-print("Vetor A:", vetorA)
-print("Vetor B:", vetorB)
+    escalarAlpha = np.random.randint(0, 10)
+    escalarBeta = np.random.randint(0, 10)
 
-# O computador precisa saber quais serao os escalares
-escalarAlpha = np.random.randint(0, 10)
-escalarBeta = np.random.randint(0, 10)
+    tempo_i = time.time()
+    vetorC = utils.combinacao_linear(escalarAlpha, vetorA, escalarBeta, vetorB)
+    tempo_f = time.time()
+    tempos[i] = tempo_f - tempo_i
 
-print("Escalares gerados:")
-print("Escalar Alpha:", escalarAlpha)
-print("Escalar Beta:", escalarBeta)
+plt.title("Combinacoes lineares")
+ plt.plot(dimensoes, tempos)
+plt.loglog(dimensoes, tempos)
+plt.show()
 
-# O computador precisa saber o que fazer com tais vetores
-vetorC = utils.combinacao_linear(escalarAlpha, vetorA, escalarBeta, vetorB)
+matrizA = np.random.rand(10, 10)
+expoentes = range(2, 4)
+tempos2 = np.zeros(len(expoentes))
 
-print("Resultado:", vetorC)
+for (i, exp) in enumerate(expoentes):
+    tempo_i = time.time()
+    utils.potencia(matrizA, exp)
+    tempo_f = time.time()
+    tempos2[i] = tempo_f - tempo_i
 
-# Medir tempo final
-tempo_final = time.time()
+plt.title("Potencias")
+plt.plot(expoentes, tempos2)
+    plt.loglog(dimensoes, tempos)
+plt.show()
 
-# Calcular diferença e mostrar na tela
-variacao_de_tempo = tempo_final - tempo_inicial
-print("Tempo gasto: {}s".format(variacao_de_tempo))
+dimensoes2 = [500, 1000, 1500, 2000]
+tempos3 = np.zeros(len(dimensoes2))
+
+for (i, dim) in enumerate(dimensoes2):
+    matrizA2 = np.random.rand(dim, dim)
+    tempo_i = time.time()
+    utils.potencia(matrizA2, 2)
+    tempo_f = time.time()
+    tempos3[i] = tempo_f - tempo_i
+
+plt.title("Potencias 2")
+# plt.plot(dimensoes2, tempos3)
+plt.loglog(dimensoes2, tempos3)
+plt.show()

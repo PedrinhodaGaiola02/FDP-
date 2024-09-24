@@ -21,6 +21,7 @@ def count_borderers(x, y, grid):
         (x + 1, y + 1),
     )
 
+    # remove celulas que nao existem
     around = tuple(
         filter(lambda cell: cell[0] >= 0 and cell[1] >= 0, around)
     )
