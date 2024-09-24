@@ -11,7 +11,7 @@ def show(vertices, edges):
         # print(edge, x, y)
 
         plt.scatter(0, 0, color="white")
-        plt.scatter(10, 10, color="white")
+        plt.scatter(15, 15, color="white")
         plt.plot(x, y, 'b', marker='o')
 
     for (name, x, y) in vertices:

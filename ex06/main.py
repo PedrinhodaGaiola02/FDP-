@@ -9,6 +9,7 @@ vertices = [
     ('3', 4, 5),
     ('4', 2, 8),
     ('5', 7, 6),
+    ('6', 8, 12),
 ]
 
 arestas = [
@@ -17,6 +18,7 @@ arestas = [
     ('2', '4'),
     ('4', '3'),
     ('3', '5'),
+    ('5', '6'),
 ]
 
 # vertices, arestas = delete_node('1', vertices, arestas)

@@ -21,7 +21,7 @@ for (i, dim) in enumerate(dimensoes):
     tempos[i] = tempo_f - tempo_i
 
 plt.title("Combinacoes lineares")
- plt.plot(dimensoes, tempos)
+plt.plot(dimensoes, tempos)
 plt.loglog(dimensoes, tempos)
 plt.show()
 
@@ -37,7 +37,7 @@ for (i, exp) in enumerate(expoentes):
 
 plt.title("Potencias")
 plt.plot(expoentes, tempos2)
-    plt.loglog(dimensoes, tempos)
+plt.loglog(dimensoes, tempos)
 plt.show()
 
 dimensoes2 = [500, 1000, 1500, 2000]
