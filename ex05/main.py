@@ -5,7 +5,7 @@ from gerador import sequencia
 N = 1000
 A = 300
 
-coeficientes = np.linspace(0, 4, A)
+coeficientes = np.linspace(2, 4, A)
 sequencias = np.zeros((A, N))
 
 for i, a in enumerate(coeficientes):

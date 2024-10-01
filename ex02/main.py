@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from lenta import multiplica as multiplica_lenta
 from rapida import multiplica as multiplica_rapida
 
-def mede_tempo(multiplica):
+def mede_tempo(multiplica, dimensao):
     tempo_inicial = time.time()
 
     matrizA = np.random.rand(dimensao, dimensao)
@@ -19,13 +19,13 @@ def mede_tempo(multiplica):
 
     return tempo_percorrido
 
-dimensoes = [100, 250, 500, 700, 1000]
+dimensoes = [100, 250, 350]
 tempos_lenta = []
 tempos_rapida = []
 
 for dimensao in dimensoes:
-    tempo_lenta_percorrido = mede_tempo(multiplica_lenta)
-    tempo_rapida_percorrido = mede_tempo(multiplica_rapida)
+    tempo_lenta_percorrido = mede_tempo(multiplica_lenta, dimensao)
+    tempo_rapida_percorrido = mede_tempo(multiplica_rapida, dimensao)
     tempos_lenta.append(tempo_lenta_percorrido)
     tempos_rapida.append(tempo_rapida_percorrido)
 
