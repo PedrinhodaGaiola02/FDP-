@@ -1,17 +1,17 @@
 #Jogar um dado podendo cair um número aleatório entre 1 e 6
 import random 
-from somatorio import soma as soma_valor_dados 
 
-M = 1
-N = 1
+
+M = 2
+N = 3
 D = []
 
 for i in range(M):
     for j in range(N):
-        D.append(random.uniform(0, 6))
-        print(D)
+        D.append(random.randint(0, 6))
+        
 
-Soma = soma_valor_dados(M, D)
+Soma =sum(D)
 print(D)
 print(Soma)
 
