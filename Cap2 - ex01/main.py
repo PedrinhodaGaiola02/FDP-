@@ -1,9 +1,9 @@
 #Jogar um dado podendo cair um número aleatório entre 1 e 6
 import random 
+from Soma import soma 
 
-
-M = 2
-N = 3
+M = 1
+N = 1
 D = []
 
 for i in range(M):
@@ -11,7 +11,7 @@ for i in range(M):
         D.append(random.randint(0, 6))
         
 
-Soma =sum(D)
+Soma = soma(M, D)
 print(D)
 print(Soma)
 
