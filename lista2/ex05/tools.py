@@ -13,7 +13,7 @@ def monte_carlo(f, g, h, j, number_of_points):
 
     bar = Bar("Estimando área via método de Monte Carlo...", max=number_of_points)
     for (x, y) in points:
-        if ((f(x) < y and g(x) > y) or (x < 0 or x > 2*pi)) and (h(y) < x and j(y) > x):
+        if ((f(x) < y and g(x) > y) or (x < 0 or x > 2*pi)) and ((h(y) < x and j(y) > x) or ((y < 1 or y > g(x)) and (x > 0 and x < 2*pi))):
             inside.append((x, y))
         else:
             outside.append((x, y))
