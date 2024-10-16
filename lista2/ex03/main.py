@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from lib import calcula_pi
 import pandas as pd
 
-
 Ns = []
 Δxs = []
 Fs = []
@@ -22,8 +21,6 @@ for N in range(10, 10000, 50):
     xs.append(x)
     πs.append(π)
     erros.append(erro)
-
-
 
 #Gráfico plotado
 plt.figure(figsize=(10, 6))
