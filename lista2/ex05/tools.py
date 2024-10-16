@@ -5,15 +5,15 @@ from progress.bar import Bar
 def image(function, domain):
     return tuple(map(function, domain))
 
-def monte_carlo(f, g, domain, number_of_points):
-    points = np.random.uniform((domain[0], 0), (domain[-1], 4), (number_of_points, 2))
+def monte_carlo(f, g, h, j, number_of_points):
+    points = np.random.uniform((-1, 0), (8, 4), (number_of_points, 2))
 
     inside = []
     outside = []
 
     bar = Bar("Estimando área via método de Monte Carlo...", max=number_of_points)
     for (x, y) in points:
-        if f(x) < y and g(x) > y:
+        if ((f(x) < y and g(x) > y) or (x < 0 or x > 2*pi)) and (h(y) < x and j(y) > x):
             inside.append((x, y))
         else:
             outside.append((x, y))
@@ -21,7 +21,7 @@ def monte_carlo(f, g, domain, number_of_points):
         bar.next()
     print()
 
-    retangle_area = 4 * domain[-1]
+    retangle_area = 9 * 4
     figure_area = (len(inside) / number_of_points) * retangle_area
 
     return figure_area, np.array(inside), np.array(outside)

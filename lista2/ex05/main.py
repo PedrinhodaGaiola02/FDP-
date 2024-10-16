@@ -18,7 +18,9 @@ imagem_j = image(j, dominio2)
 
 plot(dominio, imagem_f, imagem_g, dominio2, imagem_h, imagem_j)
 
-# area, pontos_dentro, pontos_fora = monte_carlo(f, g, dominio, number_of_points=100000)
-# scatter(pontos_dentro, pontos_fora)
+area, pontos_dentro, pontos_fora = monte_carlo(f, g, h, j, number_of_points=100000)
+scatter(pontos_dentro, pontos_fora)
+
+print('Área estimada:', area)
 
 plt.show()
