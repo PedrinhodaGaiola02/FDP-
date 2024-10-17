@@ -5,13 +5,13 @@ from progress.bar import Bar
 def image(function, domain):
     return tuple(map(function, domain))
 
-def monte_carlo(f, g, h, j, number_of_points):
+def monte_carlo(f, g, h, j, number_of_points, label="Estimando área via método de Monte Carlo..."):
     points = np.random.uniform((-1, 0), (8, 4), (number_of_points, 2))
 
     inside = []
     outside = []
 
-    bar = Bar("Estimando área via método de Monte Carlo...", max=number_of_points)
+    bar = Bar(label, max=number_of_points)
     for (x, y) in points:
         if ((f(x) < y and g(x) > y) or (x < 0 or x > 2*pi)) and ((h(y) < x and j(y) > x) or ((y < 1 or y > g(x)) and (x > 0 and x < 2*pi))):
             inside.append((x, y))
