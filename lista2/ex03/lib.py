@@ -1,17 +1,17 @@
 import math
 
 def calcula_pi(A):
-    Δx = 1 / A
-    Soma_de_Riemann = 0
+    dx = 1 / A
+    soma_de_riemann = 0
     F = []
 
     for i in range(1, A + 1):
-        x = i * Δx
+        x = i * dx
         F_i = math.sqrt(1 - x ** 2) if x ** 2 <= 1 else 0
-        Soma_de_Riemann += F_i * Δx
+        soma_de_riemann += F_i * dx
 
-    π = 4 * Soma_de_Riemann
+    π = 4 * soma_de_riemann
     erro = abs(math.pi - π)
-    return Δx, x, F, Soma_de_Riemann, π, erro
+    return dx, x, F, soma_de_riemann, π, erro
 
 

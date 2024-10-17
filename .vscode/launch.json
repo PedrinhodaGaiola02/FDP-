@@ -8,7 +8,7 @@
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
-            "program": "lista2/ex07/main.py",
+            "program": "lista2/ex07/main.realtime.py",
             "console": "integratedTerminal"
         }
     ]

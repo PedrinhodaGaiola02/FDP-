@@ -1,25 +1,23 @@
-import math 
-import numpy as np
 import matplotlib.pyplot as plt
 from lib import calcula_pi
 import pandas as pd
 
 Ns = []
-Δxs = []
+dxs = []
 Fs = []
-Soma_de_Riemanns = []
+somas = []
 xs = []
-πs = []
+pis = []
 erros = []
 
 for N in range(10, 10000, 50):
-    Δx, x, F, Soma_de_Riemann, π, erro = calcula_pi(N)
+    dx, x, F, soma, pi, erro = calcula_pi(N)
     Ns.append(N)
-    Δxs.append(Δx)
+    dxs.append(dx)
     Fs.append(F)
-    Soma_de_Riemanns.append(Soma_de_Riemann)
+    somas.append(soma)
     xs.append(x)
-    πs.append(π)
+    pis.append(pi)
     erros.append(erro)
 
 #Gráfico plotado
@@ -33,9 +31,9 @@ plt.legend()
 plt.show()
 
 #Tabela dos resultados
-Tabela = pd.DataFrame({
+tabela = pd.DataFrame({
     'N': Ns,
     'Erro': erros,
 })
 
-print(Tabela)
+print(tabela)
