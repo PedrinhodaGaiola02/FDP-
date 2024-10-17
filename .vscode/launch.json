@@ -8,7 +8,7 @@
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
-            "program": "lista2/ex06/gera_tabela.py",
+            "program": "lista2/ex07/main.py",
             "console": "integratedTerminal"
         }
     ]

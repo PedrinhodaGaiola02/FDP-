@@ -1,7 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt, animation
 from life import grid_update
-from life import count_borderers
 
 N = 100
 p0, p1 = 0.8, 0.2
