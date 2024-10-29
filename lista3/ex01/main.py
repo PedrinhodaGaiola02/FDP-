@@ -1,16 +1,24 @@
 
-a0 = 0
-a1 = 1
-
 def fib(k):
-    if k == 0:
+    if (k == 0):
         a = 0
-    elif k == 1:
+        return a
+    if (k == 1):
         a = 1
-    else: 
-        a = k -1 + k -2
-    return a
+        return a
+    if (k >> 1):
+        a = fib(k -2)+ fib(k -1)
+        return a
+
+sequencia  = []
+
+k = 25
+
+for i in range(k + 1):
+    sequencia.append(fib(i))
+    print(sequencia)
 
 
-a2 = fib(2)
-print(a2)
+
+
+
