@@ -26,8 +26,9 @@ imagem_j = image(j, dominio2)
 areas = []
 
 for (key, number_of_points) in N:
-    area, pontos_dentro, pontos_fora = monte_carlo(f, g, h, j, number_of_points, label="Processando com N = {}".format(key))
+    area, pontos_dentro, pontos_fora = monte_carlo(f, g, h, j, number_of_points)
     areas.append(area)
+
 
 tabela = DataFrame({
     'N': np.array(N)[:,0],

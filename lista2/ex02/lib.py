@@ -27,7 +27,7 @@ def escreve(pis, medias):
     print("        {:>13}   {:>13}   {:>13}   {:>13}   {:>13}".format("----------", "----------", "----------", "----------", "----------"), file=file)
 
     for i in range(len(pis)):
-        print("        {:>13,.4f}   {:>13,.4f}   {:>13,.4f}   {:>13,.4f}   {:>13,.4f}".format(*pis[i]), file=file)
+        print("{:>13,.4f}   {:>13,.4f}   {:>13,.4f}   {:>13,.4f}   {:>13,.4f}".format(*pis[i]), file=file)
 
     print("", file=file)
     print("", file=file)
