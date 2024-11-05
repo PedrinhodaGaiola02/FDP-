@@ -12,7 +12,7 @@ def fib(k):
 
 sequencia  = []
 
-k = 25
+k = 10
 
 for i in range(k + 1):
     sequencia.append(fib(i))
