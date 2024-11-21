@@ -7,7 +7,6 @@ def phi(x):
 
 x_velho = 0.75
 
-
 iteracoes = 2
 valores_de_x = [x_velho]
 valores_da_funcao = []
@@ -25,6 +24,21 @@ def y(x):
 
 eixo_x = np.linspace(0, 1.5)
 
-plt.plot(eixo_x, phi(eixo_x))
-plt.plot(eixo_x, y(eixo_x), linestyle='--')
-plt.show()
+plt.figure(figsize=(8, 6))
+plt.plot(eixo_x, phi(eixo_x), label='phi(x)')
+plt.plot(eixo_x, y(eixo_x), linestyle='--', label='y = x')
+
+
+for i in range(iteracoes):
+    plt.scatter(valores_de_x[i], valores_da_funcao[i], color='red')  # Pontos (x, phi(x))
+    plt.scatter(valores_de_x[-1], valores_de_x[-1], color='red')
+    plt.plot([valores_de_x[i], valores_de_x[i]], [valores_de_x[i], valores_da_funcao[i]], color='red')  # Linha vertical contínua
+    plt.plot([valores_de_x[i], valores_da_funcao[i]], [valores_da_funcao[i], valores_da_funcao[i]], color='red')  # Linha horizontal contínua
+    
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.title('Iterações da Função phi(x)')
+plt.grid(True)
+plt.show()    
