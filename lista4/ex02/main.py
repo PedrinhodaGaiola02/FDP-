@@ -1,5 +1,6 @@
 from matplotlib import image
 from matplotlib import pyplot as plt
+import numpy as np
 
 img = image.imread('stinkbug.png')
 
@@ -34,9 +35,15 @@ def listras(img):
 
 # img = listras(img)
 
-img = desenha_circulo(img, build_circulo(100, 100, 50), (0, 0, 0))
-img = desenha_circulo(img, build_circulo(200, 200, 100), (255, 255, 255))
-img = desenha_circulo(img, build_circulo(100, 400, 80), (0, 255, 0))
+num_bolas = 10
+raio = 10
+cor = (200, 200, 200)
+
+for i in range(num_bolas):
+    x = np.random.randint(0, img.shape[0])
+    y = np.random.randint(0, img.shape[1])
+
+    img = desenha_circulo(img, build_circulo(x, y, raio), cor)
 
 plt.imshow(img)
 plt.show()
