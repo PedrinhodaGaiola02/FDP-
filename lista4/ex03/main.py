@@ -8,14 +8,34 @@ print("Shape:", img.shape)
 
 def suaviza_retangulo(img):
     new_img = img.copy()
+
+    def get_arredores(img, i, j):
+        arredores = [img[i, j]]
+
+        if i > 0:
+            arredores.append(img[i - 1, j])
+        if i < img.shape[0] - 1:
+            arredores.append(img[i + 1, j])
+        if j > 0:
+            arredores.append(img[i, j - 1])
+        if j < img.shape[1] - 1:
+            arredores.append(img[i, j + 1])
+
+        if i > 0 and j > 0:
+            arredores.append(img[i - 1, j - 1])
+        if i > 0 and j < img.shape[1] - 1:
+            arredores.append(img[i - 1, j + 1])
+        if i < img.shape[0] - 1 and j > 0:
+            arredores.append(img[i + 1, j - 1])
+        if i < img.shape[0] - 1 and j < img.shape[1] - 1:
+            arredores.append(img[i + 1, j + 1])
+
+        return arredores
+
     for i in range(1, img.shape[0] - 1):
         for j in range(1, img.shape[1] - 1):
-            media = (
-                img[i - 1, j - 1] + img[i - 1, j] + img[i - 1, j + 1] +
-                img[i,     j - 1] + img[i,     j] + img[i,     j + 1] +
-                img[i + 1, j - 1] + img[i + 1, j] + img[i + 1, j + 1]
-            ) / 9
-
+            arredores = get_arredores(img, i, j)
+            media = sum(arredores) / len(arredores)
             new_img[i, j] = media
 
     return new_img
@@ -23,33 +43,53 @@ def suaviza_retangulo(img):
 def suaviza_cruz(img):
     new_img = img.copy()
 
+    def get_arredores(img, i, j):
+        arredores = [img[i, j]]
+
+        if i > 0:
+            arredores.append(img[i - 1, j])
+        if i < img.shape[0] - 1:
+            arredores.append(img[i + 1, j])
+        if j > 0:
+            arredores.append(img[i, j - 1])
+        if j < img.shape[1] - 1:
+            arredores.append(img[i, j + 1])
+
+        return arredores
+
     for i in range(1, img.shape[0] - 1):
         for j in range(1, img.shape[1] - 1):
-            media = (
-                img[i][j] +
-                img[i - 1][j] +
-                img[i + 1][j] +
-                img[i][j - 1] +
-                img[i][j + 1]
-            ) / 5
-
+            arredores = get_arredores(img, i, j)
+            media = sum(arredores) / len(arredores)
             new_img[i][j] = media
 
     return new_img
 
-img_suave = img
-bar = Bar("Suavizando...", max=10)
+img_suave1 = img
+bar = Bar("Suavizando cruz...", max=10)
 for i in range(10):
-    img_suave = suaviza_retangulo(img_suave)
+    img_suave1 = suaviza_cruz(img_suave1)
+    bar.next()
+bar.finish()
+
+img_suave2 = img
+bar = Bar("Suavizando retangulo...", max=10)
+for i in range(10):
+    img_suave2 = suaviza_retangulo(img_suave2)
     bar.next()
 bar.finish()
 
 fig = plt.figure()
 
-ax = fig.add_subplot(1, 2, 1)
+ax = fig.add_subplot(3, 1, 1)
 ax.imshow(img)
 
-ax2 = fig.add_subplot(1, 2, 2)
-ax2.imshow(img_suave)
+ax2 = fig.add_subplot(3, 1, 2)
+ax2.set_title("Suavizado cruz")
+ax2.imshow(img_suave1)
+
+ax3 = fig.add_subplot(3, 1, 3)
+ax3.set_title("Suavizado retangulo")
+ax3.imshow(img_suave2)
 
 plt.show()
