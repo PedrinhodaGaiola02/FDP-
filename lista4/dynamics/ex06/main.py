@@ -5,7 +5,7 @@ from matplotlib import image
 from matplotlib import animation
 
 dt = 0.1
-tempos = np.arange(0, 10, dt)
+tempos = np.arange(0, 20, dt)
 # G = 6.67408e-11
 G = 10
 
@@ -80,6 +80,6 @@ animation = animation.FuncAnimation(
     interval=100
 )
 
-# plt.show()
-animation.save("ex06.gif")
+plt.show()
+# animation.save("ex06.gif")
 
