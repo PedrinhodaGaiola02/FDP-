@@ -10,7 +10,7 @@ def animate(r1, r2, m1, m2, tempos):
     ax.set_ylim(-20, 20)
 
     img1 = ax.scatter(r1[0, 0], r1[0, 1], s=10*m1)
-    img2 = ax.scatter(r2[:, 0], r2[:, 1], s=10*m2)
+    img2 = ax.scatter(r2[0, 0], r2[0, 1], s=10*m2)
 
     def update(frameNum, img1, img2, r1, r2):
         ax.set_title("Simulação de dois corpos - t={:.2f}s".format(tempos[frameNum]))
