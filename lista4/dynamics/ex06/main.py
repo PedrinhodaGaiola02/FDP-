@@ -36,7 +36,7 @@ f2[0] = (G*m1*m2)/np.linalg.norm(r1[0]-r2[0])**3 * (r1[0]-r2[0])
 a1[0] = f1[0] / m1
 a2[0] = f2[0] / m2
 
-solution = np.zeros((len(tempos), 9))
+solution = np.zeros((len(tempos) - 1, 9))
 
 for i in range(len(tempos)-1):
     ## calcular novo r
