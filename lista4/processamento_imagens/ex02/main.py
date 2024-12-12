@@ -2,10 +2,10 @@ from matplotlib import image
 from matplotlib import pyplot as plt
 import numpy as np
 
-img = image.imread('stinkbug.png')
+img = image.imread(r"D:\Documents\GitHub\FDP-\lista4\processamento_imagens\ex02\stinkbug.png")
 
 print(img.shape)
-# print(img)
+print(img)
 
 def build_circulo(x, y, raio):
     circulo = []
@@ -33,7 +33,7 @@ def listras(img):
 
     return img
 
-# img = listras(img)
+img = listras(img)
 
 num_bolas = 10
 raio = 10

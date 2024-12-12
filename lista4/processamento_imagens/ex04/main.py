@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import image
 
-img = image.imread('concrete.jpg')
+img = image.imread(r"D:\Documents\GitHub\FDP-\lista4\processamento_imagens\ex04\concrete.jpg")
 
 print("Shape:", img.shape)
 

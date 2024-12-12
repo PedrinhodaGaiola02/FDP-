@@ -1,7 +1,8 @@
 from matplotlib import image
 from matplotlib import pyplot as plt
 
-img = image.imread('stinkbug.png')
+img = image.imread(r"D:\Documents\GitHub\FDP-\lista4\processamento_imagens\ex01\stinkbug.png")
+
 
 print(img.shape)
 

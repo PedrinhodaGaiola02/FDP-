@@ -2,7 +2,7 @@ from matplotlib import image
 from matplotlib import pyplot as plt
 from progress.bar import Bar
 
-img = image.imread('stinkbug.png')
+img = image.imread(r"D:\Documents\GitHub\FDP-\lista4\processamento_imagens\ex03\stinkbug.png")
 print("Shape:", img.shape)
 
 
