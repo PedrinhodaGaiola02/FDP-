@@ -26,9 +26,9 @@ for i, n in enumerate(N):
     bar.next(n)
 bar.finish()
 
-plt.plot(N, tempos[0], label='Bubble Sort')
-plt.plot(N, tempos[1], label='Quick Sort')
-plt.plot(N, tempos[2], label='Selection Sort')
+plt.loglog(N, tempos[0], label='Bubble Sort')
+plt.loglog(N, tempos[1], label='Quick Sort')
+plt.loglog(N, tempos[2], label='Selection Sort')
 
 plt.legend()
 plt.xlabel('N')
