@@ -8,6 +8,3 @@ def quick_sort(arr):
     right  = [x for x in arr if x > pivot]
 
     return quick_sort(left) + middle + quick_sort(right)
-
-arr = [64, 34, 25, 12, 22, 11, 90]
-print(quick_sort(arr))
